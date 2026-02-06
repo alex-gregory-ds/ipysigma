@@ -247,6 +247,7 @@ function renderTypedValue(value: any): string {
     type = 'number';
   } else if (typeof value === 'string') {
     type = 'string';
+    return `<span class="ipysigma-${type}" title="${type}">${value}</span>`;
   } else if (typeof value === 'boolean') {
     type = 'boolean';
     safe = value ? 'True' : 'False';
