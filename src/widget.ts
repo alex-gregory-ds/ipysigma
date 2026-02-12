@@ -178,6 +178,9 @@ const TEMPLATE = `
     <button class="ipysigma-download-json-button ipysigma-button">
       json
     </button>
+    <button class="ipysigma-resize-panel-button ipysigma-button" title="double right panel width">
+      expand/shrink
+    </button>
   </div>
 </div>
 `;
@@ -421,6 +424,9 @@ export class SigmaView extends DOMWidgetView {
   downloadGEXFButton: HTMLElement;
   downloadSVGButton: HTMLElement;
   downloadJSONButton: HTMLElement;
+
+  rightPanelSizeMin = "300px";
+  rightPanelSizeMax = "600px";
 
   render() {
     super.render();
@@ -1698,6 +1704,16 @@ export class SigmaView extends DOMWidgetView {
     this.resetLayoutButton.onclick = () => {
       resetLayout();
     };
+
+    (this.el.querySelector('.ipysigma-resize-panel-button') as HTMLElement).onclick = () => {
+      let right_panel = this.el.querySelector('.ipysigma-right-panel') as HTMLElement;
+      let width = right_panel.style.width;
+      if (width === this.rightPanelSizeMin) {
+        right_panel.setAttribute("style", `width: ${this.rightPanelSizeMax}`)
+      } else {
+        right_panel.setAttribute("style", `width: ${this.rightPanelSizeMin}`)
+      }
+    }
   }
 
   bindSyncEvents(syncEmitter: EventEmitter) {

@@ -58,7 +58,7 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 250px;
+  width: 300px;
   height: 100%;
 }
 
@@ -176,7 +176,7 @@
 
 .ipysigma-widget .ipysigma-information-contents,
 .ipysigma-widget .ipysigma-legend {
-  font-family: monospace;
+  font-family: sans-serif;
 }
 
 .ipysigma-widget .ipysigma-string {
