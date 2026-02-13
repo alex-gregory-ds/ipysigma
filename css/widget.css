@@ -1,3 +1,9 @@
+/* The line spacing between long h1 elements is sometimes too small so we set it */
+/* manually to help with readability. */
+h1 {
+  line-height: 1.3;
+}
+
 /* Choices.js overrides */
 .ipysigma-widget .choices {
   margin-bottom: 5px;
